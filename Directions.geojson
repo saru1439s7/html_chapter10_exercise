@@ -1,0 +1,121 @@
+var numbers = [1,2,3,45];
+var doubledNumbers=[];
+               
+ for ( var i = 0;  i < numbers.length; i++){
+  doubledNumbers.push(numbers[i]*2);
+ }
+var doubled = numbers.map(function(number){
+return number*2;
+});
+ doubled;
+doubledNumbers;
+
+
+var  cars =[
+  {type: "軽自動車",price:"やすい"},
+  {type: "高級車",price:"高い"}
+  ];
+var prices = cars.map(function(car){
+return car.price;
+})
+prices;
+
+
+var colorObjects = [{ color: '赤' }, { color: '青' }, { color: '黄色' }];
+
+var colorNames = pluck(colorObjects, 'color');
+
+function pluck(array, property) {
+  return array.map(function(element) {
+    return element[property];
+  });
+}
+
+
+var products =[
+  {name:"きゅうり",type:"野菜"},
+  {name:"なす",type:"野菜"},
+  {name:"もも",type:"フルーツ"},
+  {name:"りんご",type:"フルーツ"}
+];
+
+var filteredProducts = [];
+for (var i =0;     i<products.lenght;    i++){
+    if(products[i].type==='フルーツ'){
+        filteredProducts.push(products[i]);
+    }
+}
+
+filteredProducts
+products.filter(function(product){
+return product.type=="フルーツ"
+});
+
+var posts = [
+  {id:1,title:"海ドライブ"},
+  {id:2,title:"山登り"},
+  {id:3,title:"魚つり"}
+];
+var comment = { postId:2,comment:"いいねー"}
+//コメントに紐づくポストを探す
+function postForComment(posts,comment){
+ //postの中から探す
+    return posts.find(function(post){
+  //post.idとcomment.idが一致すること
+        return post.id === comment.postId;
+    });
+}
+postForComment(posts,comment);
+
+var posts = [
+  {id:1,title:"海ドライブ"},
+  {id:2,title:"山登り"},
+  {id:3,title:"魚つり"}
+];
+var comment = { postId:2,comment:"いいねー"}
+//コメントに紐づくポストを探す
+function postForComment(posts,comment){
+ //postの中から探す
+    return posts.find(function(post){
+  //post.idとcomment.idが一致すること
+        return post.id === comment.postId;
+    });
+}
+postForComment(posts,comment);
+
+var users = [
+  { id: 1, admin: false },
+  { id: 2, admin: false },
+  { id: 3, admin: true }
+];
+
+var admin  = users.find(function(user){
+ return user.admin;
+});
+
+admin;
+
+
+var accounts = [
+  { balance: -10 },
+  { balance: 12 },
+  { balance: 0 }
+];
+
+var account = accounts.find(function(account){
+    return account.balance === 12;
+}) ;
+account;
+///////////////
+var ladders = [
+  { id: 1, height: 20 },
+  { id: 3, height: 25 }
+];
+
+function findWhere(array, criteria) {
+  return array.find(function(element) {
+    var property = Object.keys(criteria)[0];
+    
+    return element[property] === criteria[property];
+  });
+}
