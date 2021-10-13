@@ -249,4 +249,51 @@ const max = getMax(number1,number2,number3);
 console.log(`最大値は${max}です`)
 
 /////
+var computers = [
+  {name:"apple",ram:24},
+  {name:"com",ram:4},
+  {name:"acer",ram:32},
+]
+var allComputersCanRun = true;
+var someComputersCanRun = false;
 
+computers.every(function(computer){
+return computer.ram>=16;
+})
+
+computers.some(function(computer){
+return computer.ram>=16;
+})
+/////////
+//////////////
+var names = [
+ "けん","花子","壮一とう"
+];
+names.every(function(name){
+return name.length >=3;
+})
+names.some(function(name){
+return name.length >=3;
+})
+
+///////
+var users = [
+  { id: 21, hasSubmitted: true },
+  { id: 62, hasSubmitted: false },
+  { id: 4, hasSubmitted: true }
+];
+
+var hasSubmitted = users.some(function(user){
+    return users.hasSubmitted;
+})
+//////
+var requests = [
+  { url: '/photos', status: 'complete' },
+  { url: '/albums', status: 'pending' },
+  { url: '/users', status: 'failed' }
+];
+
+var inProgress= requests.some(function(request){
+    return request.status === "pending";
+});
+/////
